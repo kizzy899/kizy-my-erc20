@@ -1,57 +1,100 @@
-# Sample Hardhat 3 Beta Project (`mocha` and `ethers`)
+```markdown
+# ERC20 代币项目 - 从零开始构建完整代币系统
 
-This project showcases a Hardhat 3 Beta project using `mocha` for tests and the `ethers` library for Ethereum interactions.
+这是一个从 0 开始构建完整代币系统的练习项目，包含 ERC20 代币、水龙头、空投等核心功能。所有主要功能都以 TODO 形式提供，便于学习和实践。
 
-To learn more about the Hardhat 3 Beta, please visit the [Getting Started guide](https://hardhat.org/docs/getting-started#getting-started-with-hardhat-3). To share your feedback, join our [Hardhat 3 Beta](https://hardhat.org/hardhat3-beta-telegram-group) Telegram group or [open an issue](https://github.com/NomicFoundation/hardhat/issues/new) in our GitHub issue tracker.
+## 🚀 项目特性
 
-## Project Overview
+- **📝 ERC20 代币合约**：可铸造、初始分发（TODO 实现）
+- **🚰 水龙头 (Faucet) 合约**：用户领取少量代币测试交互（TODO 实现）  
+- **🎁 空投 (Airdrop) 合约**：批量向用户地址发放代币（TODO 实现）
+- **🌐 多网络部署**：支持 Hardhat 本地链和 Sepolia 测试网（TODO 配置）
+- **🧪 自动化测试**：覆盖基本功能测试用例（TODO 编写）
 
-This example project includes:
+## 📁 项目结构
 
-- A simple Hardhat configuration file.
-- Foundry-compatible Solidity unit tests.
-- TypeScript integration tests using `mocha` and ethers.js
-- Examples demonstrating how to connect to different types of networks, including locally simulating OP mainnet.
+```
+kizy-my-erc20/
+├── contracts/
+│   ├── MyToken.sol           # TODO: ERC20 代币合约
+│   ├── Faucet.sol            # TODO: 水龙头合约
+│   └── Airdrop.sol           # TODO: 空投合约
+├── scripts/
+│   ├── deploy.js             # TODO: 部署脚本
+│   └── airdrop.js            # TODO: 空投脚本
+├── test/
+│   └── MyToken.test.js       # TODO: 测试用例
+├── hardhat.config.js         # TODO: 网络配置
+└── README.md
+```
 
-## Usage
+## 🛠 开始练习
 
-### Running Tests
+### 前置要求
+- Node.js 16+
+- npm 或 yarn
+- Git
 
-To run all the tests in the project, execute the following command:
+### 安装依赖
+```bash
+npm install
+```
 
-```shell
+### 练习任务清单
+
+#### 阶段 1: 基础 ERC20 代币
+- [ ] 实现 MyToken.sol 中的 ERC20 标准函数
+- [ ] 添加代币铸造功能
+- [ ] 实现初始代币分发逻辑
+- [ ] 编写基本功能测试用例
+
+#### 阶段 2: 水龙头合约  
+- [ ] 实现 Faucet.sol 中的领取逻辑
+- [ ] 添加防滥用机制（时间限制、数量限制）
+- [ ] 测试水龙头功能
+
+#### 阶段 3: 空投合约
+- [ ] 实现 Airdrop.sol 批量发送功能
+- [ ] 添加白名单机制
+- [ ] 编写空投脚本
+
+#### 阶段 4: 部署与测试
+- [ ] 配置多网络 Hardhat 设置
+- [ ] 编写部署脚本
+- [ ] 在本地和测试网部署合约
+
+### 常用命令
+
+```bash
+# 编译合约
+npx hardhat compile
+
+# 运行测试
 npx hardhat test
+
+# 本地部署
+npx hardhat run scripts/deploy.js --network localhost
+
+# 测试网部署
+npx hardhat run scripts/deploy.js --network sepolia
 ```
 
-You can also selectively run the Solidity or `mocha` tests:
+## 🎯 学习目标
 
-```shell
-npx hardhat test solidity
-npx hardhat test mocha
-```
+通过完成这个项目的 TODO 部分，你将掌握：
 
-### Make a deployment to Sepolia
+- Solidity 智能合约开发
+- ERC20 标准实现
+- 水龙头和空投合约设计模式
+- Hardhat 开发框架使用
+- 多网络部署流程
+- 智能合约测试编写
 
-This project includes an example Ignition module to deploy the contract. You can deploy this module to a locally simulated chain or to Sepolia.
+## 🤝 贡献
 
-To run the deployment to a local chain:
+这是一个学习项目，欢迎提交改进建议和代码优化！
 
-```shell
-npx hardhat ignition deploy ignition/modules/Counter.ts
-```
+## 📄 许可证
 
-To run the deployment to Sepolia, you need an account with funds to send the transaction. The provided Hardhat configuration includes a Configuration Variable called `SEPOLIA_PRIVATE_KEY`, which you can use to set the private key of the account you want to use.
-
-You can set the `SEPOLIA_PRIVATE_KEY` variable using the `hardhat-keystore` plugin or by setting it as an environment variable.
-
-To set the `SEPOLIA_PRIVATE_KEY` config variable using `hardhat-keystore`:
-
-```shell
-npx hardhat keystore set SEPOLIA_PRIVATE_KEY
-```
-
-After setting the variable, you can run the deployment with the Sepolia network:
-
-```shell
-npx hardhat ignition deploy --network sepolia ignition/modules/Counter.ts
+MIT License
 ```
