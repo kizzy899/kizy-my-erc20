@@ -1,4 +1,3 @@
-```markdown
 # ERC20 代币项目 - 从零开始构建完整代币系统
 
 这是一个从 0 开始构建完整代币系统的练习项目，包含 ERC20 代币、水龙头、空投等核心功能。所有主要功能都以 TODO 形式提供，便于学习和实践。
@@ -13,7 +12,6 @@
 
 ## 📁 项目结构
 
-```
 kizy-my-erc20/
 ├── contracts/
 │   ├── MyToken.sol           # TODO: ERC20 代币合约
@@ -26,7 +24,7 @@ kizy-my-erc20/
 │   └── MyToken.test.js       # TODO: 测试用例
 ├── hardhat.config.js         # TODO: 网络配置
 └── README.md
-```
+
 
 ## 🛠 开始练习
 
